@@ -1,0 +1,228 @@
+/* AboutBanner.module.css */
+
+.section {
+  width: 100%;
+  padding: 6rem 0;
+  background: linear-gradient(180deg, #ffffff, #f4f7ff);
+  overflow: hidden;
+}
+
+/* animation starts only when reached */
+.show .imageWrap,
+.show .imageCircle,
+.show .content,
+.show .tag,
+.show .heading,
+.show .text {
+  opacity: 1;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* image side */
+.imageWrap {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+
+.show .imageWrap {
+  animation: fadeLeft 1s ease forwards;
+}
+
+.imageCircle {
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  padding: 10px;
+
+  background: linear-gradient(135deg, #041c5a, #2563eb);
+  box-shadow: 0 25px 60px rgba(4, 28, 90, 0.18);
+
+  opacity: 0;
+}
+
+.show .imageCircle {
+  animation: zoomIn 1.2s ease forwards;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* content side */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  opacity: 0;
+}
+
+.show .content {
+  animation: fadeRight 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #041c5a;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+
+  margin-bottom: 1rem;
+  opacity: 0;
+}
+
+.show .tag {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.heading {
+  font-size: 2.5rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #041c5a;
+  margin-bottom: 1.3rem;
+
+  opacity: 0;
+}
+
+.show .heading {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #475569;
+  max-width: 540px;
+
+  opacity: 0;
+}
+
+.show .text {
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.8s;
+}
+
+/* animations */
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* tablet */
+@media (max-width: 992px) {
+  .container {
+    gap: 2rem;
+  }
+
+  .imageCircle {
+    width: 340px;
+    height: 340px;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .content {
+    align-items: center;
+  }
+
+  .imageCircle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .heading {
+    font-size: 1.7rem;
+  }
+
+  .text {
+    font-size: 0.96rem;
+    max-width: 100%;
+  }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+  .imageCircle {
+    width: 240px;
+    height: 240px;
+  }
+
+  .heading {
+    font-size: 1.45rem;
+  }
+}

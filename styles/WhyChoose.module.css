@@ -1,6 +1,17 @@
 .section {
   padding: 6rem 1.5rem;
   background: linear-gradient(180deg, #ffffff, #f3f6ff);
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(70px);
+  transition: all 1s ease;
+}
+
+/* visible on scroll */
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* container */
@@ -21,12 +32,30 @@
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 1rem;
+
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.8s ease 0.2s;
+}
+
+.show .heading {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .subtext {
   color: #475569;
   font-size: 1rem;
   line-height: 1.6;
+
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease 0.4s;
+}
+
+.show .subtext {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* grid */
@@ -42,10 +71,51 @@
   border-radius: 14px;
   background: linear-gradient(135deg, #0a0a0a, #0d1b3d);
   color: #ffffff;
+
   transition: all 0.35s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(45px);
+}
+
+/* stagger animation */
+.show .card:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s ease 0.45s;
+}
+
+.show .card:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s ease 0.55s;
+}
+
+.show .card:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s ease 0.65s;
+}
+
+.show .card:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s ease 0.75s;
+}
+
+.show .card:nth-child(5) {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s ease 0.85s;
+}
+
+.show .card:nth-child(6) {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s ease 0.95s;
 }
 
 /* glow border */
@@ -56,11 +126,14 @@
   border-radius: 14px;
   padding: 1px;
   background: linear-gradient(135deg, #2563eb, transparent);
+
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
+
   -webkit-mask-composite: xor;
   mask-composite: exclude;
+
   opacity: 0.4;
 }
 

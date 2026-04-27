@@ -1,17 +1,41 @@
-import React from "react";
+import AboutBanner from "@/components/AboutBanner";
+import AboutBanner1 from "@/components/AboutBanner1";
+import AboutIntro from "@/components/AboutIntro";
 
-const About = () => {
+
+export const metadata = {
+  title: "About Mechfusion | Engineering Design & Consulting Services",
+  description:
+    "Mechfusion transforms ideas into accurate, manufacturable designs through precision engineering, innovative solutions, and professional consulting services.",
+  keywords: [
+    "Reverse Engineering Design",
+    "Estimation and Costing",
+    "Engineering Design Services",
+    "Mechanical Design",
+    "Consulting Services",
+  ],
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "Reverse Engineering Design & Cost Estimation Experts | Mechfusion",
+    description:
+      "Mechfusion transforms ideas into accurate, manufacturable designs through precision engineering and consulting.",
+    url: "/about",
+    siteName: "Mechfusion",
+    type: "website",
+  },
+};
+
+const AboutPage = () => {
   return (
-    <div>
-      <h1>hihiih</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aliquid
-        ipsam blanditiis, eum voluptatibus molestiae pariatur autem cupiditate
-        ex distinctio, rerum nostrum ipsum, quos dolorem reprehenderit fugiat
-        deserunt fugit corporis.
-      </p>
-    </div>
+    <>
+      <AboutBanner1 />
+      <AboutBanner />
+      <AboutIntro />
+      {/* <HomeContact /> */}
+    </>
   );
 };
 
-export default About;
+export default AboutPage;

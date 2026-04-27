@@ -9,6 +9,9 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+
+  opacity: 0;
+  animation: cardEntry 0.9s ease forwards;
 }
 
 /* subtle glow effect */
@@ -25,6 +28,30 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0.4;
+
+  animation: borderGlow 4s linear infinite;
+}
+
+/* ambient shine */
+.card::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -40%;
+  width: 60%;
+  height: 250%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  transform: rotate(20deg);
+  transition: 0.6s ease;
+}
+
+.card:hover::after {
+  left: 120%;
 }
 
 /* Hover effect */
@@ -46,7 +73,7 @@
 /* Image */
 .image {
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.45s ease;
 }
 
 /* Image zoom on hover */
@@ -58,13 +85,17 @@
 .title {
   font-size: 1.3rem;
   margin-top: 14px;
-  /* border: 1px solid white; */
   height: 3.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   letter-spacing: 0.3px;
+  text-align: center;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.25s;
 }
 
 /* Description */
@@ -72,18 +103,43 @@
   font-size: 0.82rem;
   height: 7rem;
   margin-top: 6px;
-  /* line-height: 1.5; */
   color: #cbd5e1;
-  /* border: 1px solid white; */
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.45s;
 }
 
-/* Optional: subtle divider line */
-/* .title::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: #2563eb;
-  margin-top: 6px;
-  border-radius: 2px;
-} */
+/* animations */
+@keyframes cardEntry {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    opacity: 0.35;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.75;
+    filter: brightness(1.25);
+  }
+}

@@ -1,0 +1,179 @@
+/* AboutBanner1.module.css */
+
+.banner {
+  width: 100%;
+  min-height: 52vh;
+  position: relative;
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(4, 28, 90, 0.92) 0%,
+      rgba(4, 28, 90, 0.82) 35%,
+      rgba(4, 28, 90, 0.45) 60%,
+      rgba(4, 28, 90, 0.2) 100%
+    ),
+    url("/images/Assets/29.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+
+  animation: bannerZoom 1.2s ease forwards;
+}
+
+.overlay {
+  width: 100%;
+  padding: 7rem 1.5rem 5rem;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
+
+  animation: fadeUp 1s ease forwards;
+}
+
+/* tag */
+.tag {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.45rem 1rem;
+
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* heading */
+.heading {
+  max-width: 650px;
+  font-size: 3rem;
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+
+  opacity: 0;
+  animation: fadeLeft 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* text */
+.text {
+  max-width: 620px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.92);
+
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.8s;
+}
+
+/* animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bannerZoom {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* tablet */
+@media (max-width: 992px) {
+  .banner {
+    min-height: 46vh;
+  }
+
+  .heading {
+    font-size: 2.4rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .banner {
+    min-height: 65vh;
+
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(4, 28, 90, 0.9) 0%,
+        rgba(4, 28, 90, 0.596) 45%,
+        rgba(4, 28, 90, 0.65) 100%
+      ),
+      url("/images/Assets/29.webp");
+
+    background-position: center;
+    background-size: cover;
+  }
+
+  .overlay {
+    padding: 6rem 1rem 3rem;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 2rem;
+    max-width: 100%;
+  }
+
+  .text {
+    max-width: 100%;
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.7rem;
+  }
+
+  .tag {
+    font-size: 0.78rem;
+  }
+}

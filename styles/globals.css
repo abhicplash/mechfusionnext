@@ -4,3 +4,7 @@ body {
   box-sizing: border-box;
   font-family: var(--font-parkinsans), sans-serif;
 }
+p ,h3{
+  margin: 0;
+  padding: 0;
+}

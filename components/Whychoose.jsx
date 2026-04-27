@@ -1,12 +1,37 @@
+"use client";
+
+import { useRef, useEffect, useState } from "react";
 import styles from "@/styles/WhyChoose.module.css";
 
 const WhyChoose = () => {
+  const sectionRef = useRef(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShow(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className={styles.section}>
+    <section
+      ref={sectionRef}
+      className={`${styles.section} ${show ? styles.show : ""}`}
+    >
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
           <h2 className={styles.heading}>Why Choose Mechfusion</h2>
+
           <p className={styles.subtext}>
             Clients choose Mechfusion because we deliver more than drawings — we
             deliver dependable engineering support.
