@@ -1,0 +1,337 @@
+.contactPage {
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HERO */
+
+.hero {
+  /* border: 1px solid red; */
+  width: 100%;
+  text-align: left;
+  padding: 110px 20px 70px;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(4, 28, 90, 0.92) 0%,
+      rgba(4, 28, 90, 0.82) 35%,
+      rgba(4, 28, 90, 0.45) 60%,
+      rgba(4, 28, 90, 0.2) 100%
+    ),
+    url("/images//Assets/35.webp");
+  background-position: center;
+  background-size: cover;
+  color: white;
+  animation: fadeUp 1s ease;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  padding-left: 200px;
+  animation: fadeUp 1s ease;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: start;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  width: 50%;
+  /* max-width: 650px; */
+  /* margin: auto; */
+  line-height: 1.8;
+  text-align: start;
+}
+
+/* CONTACT CARDS */
+
+.cardWrapper {
+  width: 90%;
+  max-width: 1300px;
+  margin: -50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  z-index: 10;
+  position: relative;
+}
+
+.card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: #0f172a;
+  transition: 0.4s ease;
+  animation: fadeUp 1s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.card svg {
+  font-size: 2.8rem;
+  color: #2563eb;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* FORM SECTION */
+
+.formSection {
+  width: 80%;
+  /* max-width: 1300px; */
+  margin: 90px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.left {
+  animation: fadeLeft 1s ease;
+}
+
+.left h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.left p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #555;
+  margin-bottom: 35px;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+}
+
+.socials a {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #eff6ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2563eb;
+  font-size: 1.4rem;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* FORM */
+
+.form {
+  /* background: #f8fafc; */
+  width: 90%;
+  padding: 40px 0;
+  /* border-radius: 22px; */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  animation: fadeRight 1s ease;
+}
+
+.form input,
+.form textarea {
+  font-family: inherit;
+  padding: 6px;
+  width: 60%;
+  border-radius: 5px;
+  border: 1px solid #0f172a;
+  outline: none;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #173b8a;
+}
+
+.form textarea {
+  min-height: 140px;
+  resize: none;
+}
+
+.form button {
+  background: linear-gradient(135deg, #09193b, #1d4ed8);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+  width: 63%;
+}
+
+.form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(37, 99, 235, 0.25);
+}
+
+.form span {
+  color: green;
+  font-size: 0.95rem;
+}
+
+/* MAP */
+
+.mapSection {
+  width: 100%;
+  padding: 0 0 80px;
+}
+
+.mapSection iframe {
+  width: 70%;
+  height: 15rem;
+  /* max-width: 1300px; */
+  /* height: 480px; */
+  border: none;
+  display: block;
+  margin: auto;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+  .cardWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .formSection {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .left {
+    text-align: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .left h2 {
+    font-size: 2rem;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .mapSection iframe {
+    /* height: 350px; */
+    width: 85%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 90px 15px 60px;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+    text-align: center;
+  }
+  .hero p {
+    width: 90%;
+    text-align: center;
+  }
+  .card {
+    padding: 28px 18px;
+  }
+  .form {
+    justify-content: center;
+    align-items: center;
+  }
+  .form input,
+  .form textarea {
+    width: 85%;
+  }
+}

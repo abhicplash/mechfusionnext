@@ -1,0 +1,150 @@
+/* ServiceBanner.module.css */
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 75vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      115deg,
+      rgba(4, 28, 90, 0.96),
+      rgba(4, 28, 90, 0.78),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("/images/engineeringdocumentation.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* dark premium layer */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, #2563eb55, transparent 40%);
+  animation: floatGlow 7s ease-in-out infinite;
+}
+
+/* content */
+.content {
+  position: relative;
+  z-index: 2;
+  /* max-width: 1180px; */
+  margin: 0 auto;
+  /* padding: 0 4rem; */
+  color: white;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+/* when reached */
+.show .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  /* margin-bottom: 1.4rem; */
+}
+
+.heading {
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  max-width: 700px;
+}
+
+.text {
+  max-width: 680px;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #dbe4ff;
+}
+
+.line {
+  width: 90px;
+  height: 4px;
+  border-radius: 50px;
+  background: linear-gradient(to right, #60a5fa, #ffffff);
+  margin-top: 2rem;
+}
+
+/* floating glow */
+@keyframes floatGlow {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-20px, 20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.6;
+  }
+}
+
+/* tablet */
+@media (max-width: 992px) {
+  .heading {
+    font-size: 3rem;
+  }
+
+  .content {
+    padding: 0 2rem;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .banner {
+    min-height: 82vh;
+    background-position: center;
+  }
+
+  .content {
+    padding: 0 1.2rem;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+  }
+
+  .text {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .line {
+    width: 70px;
+  }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.9rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+  }
+}

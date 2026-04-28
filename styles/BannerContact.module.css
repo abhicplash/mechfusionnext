@@ -1,0 +1,159 @@
+.banner {
+  width: 100%;
+  min-height: 52vh;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 28, 90, 0.92) 0%,
+      rgba(4, 28, 90, 0.82) 35%,
+      rgba(4, 28, 90, 0.35) 65%,
+      rgba(4, 28, 90, 0.12) 100%
+    ),
+    url("/images/Assets/9.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.22), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(255,255,255,0.08), transparent 30%);
+  animation: floatGlow 8s ease-in-out infinite;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 760px;
+  padding: 0 1.5rem;
+  margin-left: 8%;
+}
+
+/* reveal states */
+.tag,
+.heading,
+.text {
+  opacity: 0;
+}
+
+.show .tag {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.show .heading {
+  animation: fadeUp 0.9s ease forwards;
+  animation-delay: 0.15s;
+}
+
+.show .text {
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.35s;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-size: 3.2rem;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: #dbeafe;
+  max-width: 620px;
+}
+
+/* animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatGlow {
+  0%,100% {
+    transform: translate(0,0);
+  }
+  50% {
+    transform: translate(-20px, 15px);
+  }
+}
+
+/* tablet */
+@media (max-width: 992px) {
+  .banner {
+    min-height: 46vh;
+  }
+
+  .content {
+    margin-left: 5%;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .banner {
+    min-height: 62vh;
+    background-position: center;
+  }
+
+  .content {
+    margin-left: 0;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 0.96rem;
+    line-height: 1.7;
+    max-width: 100%;
+  }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.7rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+  }
+}

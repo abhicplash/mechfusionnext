@@ -1,6 +1,7 @@
 import AboutBanner from "@/components/AboutBanner";
 import AboutBanner1 from "@/components/AboutBanner1";
 import AboutIntro from "@/components/AboutIntro";
+import HomeContact from "@/components/HomeContact";
 
 
 export const metadata = {
@@ -33,7 +34,7 @@ const AboutPage = () => {
       <AboutBanner1 />
       <AboutBanner />
       <AboutIntro />
-      {/* <HomeContact /> */}
+      <HomeContact />
     </>
   );
 };
