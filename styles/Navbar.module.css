@@ -221,14 +221,19 @@
   .listdesk {
     display: none;
   }
+  .NavBarContainer{
+    height: 15vh;
+  }
 
   .mobileBtn {
     display: block;
   }
 
   .navInner {
-    padding: 0 1rem;
-    justify-content: space-between;
+    /* height: 7vh; */
+    align-items: center;
+    /* padding: 0 1rem; */
+    justify-content: space-around;
   }
 
   .logomf {
