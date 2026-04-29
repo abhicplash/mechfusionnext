@@ -79,8 +79,8 @@ export default function BlogPage() {
 
             <div className={styles.cardBody}>
               <p className={styles.cardPara}>
-                {blog.title}
-                {/* <HiArrowCircleRight className={styles.arrowicon} /> */}
+                {blog.title} <br />
+                <HiArrowCircleRight className={styles.arrowicon} />
               </p>
             </div>
           </Link>
